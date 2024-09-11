@@ -1,0 +1,20 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    Florafend - Get Recommendations
+{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="home-bg">
+        <img src="{% static 'images/abg4.avif' %}" alt="Background Image" class="background-image">
+        <div class="ask-container">
+            <h1>Get Recommendations</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="disease">Enter the disease:</label><br>
+                <input type="text" id="disease" name="disease"><br><br>
+                <input type="submit" value="Get Recommendations">
+            </form>
+        </div>
+    </div>
+{% endblock %}

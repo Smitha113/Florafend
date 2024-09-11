@@ -1,0 +1,26 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+{% load static %}
+{% block content %}
+<img src="{% static 'images/bg3.jpg' %}" alt="Contact Banner" class="background-image">
+
+<div class="scrollable-content" style="padding-top: 50px;">
+    <div class="about-container">
+        <h1>Contact Us</h1>
+        <ul class="about-container">
+            <p style="padding-bottom: 30px;">Meet our team of 3rd-year CSE students:</p>
+            <li><strong>Smitha</strong> - USN: 4MW21CS099 - Email: smitha.21cs099@sode-edu.in</li>
+            <li><strong>Supritha</strong> - USN: 4MW21CS106 - Email: supritha.21cs099@sode-edu.in</li>
+            <li><strong>Trupti Acharya</strong> - USN: 4MW21CS110 - Email: trupti.21cs099@sode-edu.in</li>
+            <li><strong>Yuktha</strong> - USN: 4MW21CS122 - Email: yuktha.21cs099@sode-edu.in</li>
+        </ul>
+        <p style="padding-top: 30px;"></p>
+        <p class="about-container">
+            If you have any questions or need further information, feel free to <a href="mailto:smitha.21cs099@sode-edu.in">email us</a>.
+        </p>
+    </div>
+</div>
+{% endblock %}

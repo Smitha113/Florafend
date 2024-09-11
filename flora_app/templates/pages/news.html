@@ -1,0 +1,19 @@
+<!-- flora_app/templates/pages/news.html -->
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+Latest News - Florafend
+{% endblock %}
+{% load static %}
+{% block content %}
+<div id="news-list" class="scrollable-content">
+    <img src="{% static 'images/abg1.avif' %}" alt="Background Image" class="background-image">
+    {% for article in news_data %}
+    <div class="news-article">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.description }}</p>
+        <a href="{{ article.url }}" target="_blank">Read more</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

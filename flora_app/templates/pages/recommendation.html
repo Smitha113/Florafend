@@ -1,0 +1,20 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    Florafend - Get Recommendations
+{% endblock %}
+{% load static %}
+{% block content %}
+<div class="home-bg">
+    <img src="{% static 'images/bg5.avif' %}" alt="Background Image" class="background-image">
+    <div class="recommend-container">
+        <h1>Recommendations for {{ disease }}</h1>
+        <ul>
+            {% for recommendation in recommendations %}
+                <li>{{ recommendation }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'home' %}" class="button">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

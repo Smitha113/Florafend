@@ -1,0 +1,34 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    About Florafend
+{% endblock %}
+{% load static %}
+{% block content %}
+<img src="{% static 'images/bg3.jpg' %}" alt="Florafend Banner" class="background-image">
+
+<div class="scrollable-content" style="padding-top: 40px;">
+    <div class="about-container">
+        <h1>About Florafend</h1>
+        <p class="about-container">
+            Florafend detects plant leaf diseases using advanced CNN models, helping farmers and gardeners manage plant health efficiently.
+        </p>
+        <h1>Key Features</h1>
+        <ul class="about-container">
+            <li><strong>Disease Detection:</strong> Upload leaf images for instant diagnosis.</li>
+            <li><strong>Recommendations:</strong> Get tailored management tips.</li>
+            <li><strong>Latest News:</strong> Stay updated on plant disease trends.</li>
+            <li><strong>Blog Section:</strong> Read expert articles and tips.</li>
+        </ul>
+
+        <!-- <h1>Why Florafend?</h1>
+        <p class="about-container">
+            Florafend leverages the power of machine learning to provide accurate and quick disease detection. Our platform is user-friendly and extremely useful for anyone involved in plant care, from professional farmers to home gardeners.
+        </p> -->
+        <h1>Get Started</h1>
+        <p class="about-container">
+            Join our community and start protecting your plants today! <a href="{% url 'register' %}">Register</a> now or <a href="{% url 'login' %}">Login</a> to your account.
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- blog/templates/blog/create_post.html -->
+{% extends 'blog/base.html' %}
+
+{% block title %}Create Post{% endblock %}
+{% load static %}
+{% block content %}
+    <p style="padding-top: 40px;"></p>
+    <div class="recommend-container" style=" margin: 0 auto;">
+        <img src="{% static 'images/abg5.avif' %}" alt="Background Image" class="background-image">
+        <h2>Create New Post</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
+{% endblock %}

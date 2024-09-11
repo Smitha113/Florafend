@@ -1,0 +1,15 @@
+<!-- pages/templates/pages/register.html -->
+
+{% extends 'pages/sidebar.html' %}
+{% load static %}
+{% block content %}
+  <div class="login-container">
+    <img src="{% static 'images/bg5.avif' %}" alt="Background Image" class="background-image">
+    <h1>Register</h1>
+    <form method="post">
+      {% csrf_token %}  
+      {{ form.as_p }}
+      <input type="submit" value="Register">
+    </form>
+  </div>
+{% endblock %}

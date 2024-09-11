@@ -1,0 +1,21 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    Florafend - Login
+{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="login-container">
+        <img src="{% static 'images/bg5.avif' %}" alt="Background Image" class="background-image">
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+{% endblock %}

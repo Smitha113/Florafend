@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check" id="btn">
+        <i class="fas fa-bars"> Menu</i>
+    </label>
+
+    <div class="sidebar">
+        <header>
+            <!-- <label for="check" id="cancel">
+                <i class="fas fa-times"></i>
+            </label> -->
+            <!-- My App -->
+        </header>
+        <ul>
+            <!-- {% if user.is_authenticated %} -->
+            <li><a href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="{% url 'predict' %}"><i class="fas fa-chart-line"></i>Predict</a></li>
+            <li><a href="{% url 'ask' %}"><i class="fas fa-question-circle"></i>Recommendation</a></li>
+            <li><a href="{% url 'latest_news' %}"><i class="fas fa-newspaper"></i>Latest News</a></li>
+            <li><a href="{% url 'blog_home' %}"><i class="fas fa-blog"></i>Blog</a></li>
+            <li><a href="{% url 'about' %}"><i class="fas fa-info-circle"></i>About</a></li>
+            <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i>Contact</a></li>
+            <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Sign out</a></li>
+            <!-- {% endif %} -->
+        </ul>
+    </div>
+
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}Florafend{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="home-bg position-relative">
+        <img src="{% static 'images/home-bg.png' %}" alt="Background Image" class="background-image">
+        <h5></h5>
+        
+        <!-- Add signin option -->
+        <div class="signin-option">
+            <span><a href="{% url 'login' %}" class="signin-btn">Sign In</a></span>
+            <span><a href="{% url 'register' %}" class="signin-btn">Register</a></span>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

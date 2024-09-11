@@ -1,0 +1,32 @@
+{% extends 'pages/sidebar.html' %}
+
+{% block title %}
+    Florafend - Get Recommendations
+{% endblock %}
+{% load static %}
+{% block content %}
+<div class="home-bg">
+    <img src="{% static 'images/abg5.avif' %}" alt="Background Image" class="background-image">
+    <div class="ask-container">
+        <h1>Predict Plant Disease</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="plant_image">Upload Plant Image:</label>
+            <input type="file" id="plant_image" name="plant_image" class="input-file">
+            <button type="submit" class="button">Predict</button>
+        </form>
+
+        {% if message %}
+            <p style="color: rgb(31, 87, 31); font-weight: 200;">{{ message }}</p>
+        {% endif %}
+
+        {% if disease %}
+            <h2>Predicted Disease: {{ disease }}</h2>
+            <form action="{% url 'recommendation' %}" method="get">
+                <button type="submit" class="button">Get Recommendations</button>
+            </form>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

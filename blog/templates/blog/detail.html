@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% load static %}
+{% block content %}
+    <div style="
+    padding: 60px;
+    border-radius: 30px;
+    background-color: rgba(255, 247, 247, 0.8); /* Add some transparency */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 20px auto;
+    ">
+        <img src="{% static 'images/abg5.avif' %}" alt="Background Image" class="background-image">
+    <h1>{{ post.title }}</h1>
+    <p>By {{ post.author }} on {{ post.created_at }}</p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%;">
+    {% endif %}
+    <p>{{ post.content }}</p>
+    <h2>Comments</h2>
+    {% for comment in post.comments.all %}
+        <p><strong>{{ comment.author }}:</strong> {{ comment.content }}</p>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+    <h3>Add a comment:</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+
+    {% if request.user == post.author %}
+        <form method="post" action="{% url 'delete_post' post.id %}">
+            {% csrf_token %}
+            <button type="submit">Delete Post</button>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
