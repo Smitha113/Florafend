@@ -6,6 +6,7 @@ Disease Prediction: Upload a leaf image, and Florafend will predict the disease 
 Recommendations: Receive personalized recommendations for managing the detected disease.
 Latest News: Stay updated with the latest news on plant diseases, sourced from NewsAPI.
 Blog Section: Read articles and insights related to plant health and disease management.
+
 Installation
 To set up the Florafend project locally, follow these steps:
 
